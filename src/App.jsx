@@ -8,6 +8,7 @@ function App() {
   return (
     <>
       <h1>Aktuell</h1>
+      <h2>test eintrag</h2>
     </>
   );
 }
