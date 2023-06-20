@@ -1,9 +1,10 @@
 import { useContext, useState } from "react";
 import "./MenuBtn.css";
-import { MenuClickedContext } from "../../context/Context";
+import { MenuClickedContext, DarkModeContext } from "../../context/Context";
 
 const MenuBtn = () => {
 	const { menuClicked, setMenuClicked } = useContext(MenuClickedContext);
+	const { darkMode, setDarkMode } = useContext(DarkModeContext);
 
 	const openMenu = () => {
 		setMenuClicked(prev => !prev);
@@ -12,9 +13,15 @@ const MenuBtn = () => {
 	return (
 		<>
 			<div onClick={openMenu} className='menu-btn'>
-				<div className='menu-btn-line'></div>
-				<div className='menu-btn-line'></div>
-				<div className='menu-btn-line'></div>
+				<div
+					className={darkMode ? "menu-btn-line light" : "menu-btn-line"}
+				></div>
+				<div
+					className={darkMode ? "menu-btn-line light" : "menu-btn-line"}
+				></div>
+				<div
+					className={darkMode ? "menu-btn-line light" : "menu-btn-line"}
+				></div>
 			</div>
 
 			<div style={menuClicked ? { display: "block" } : { display: "none" }}>

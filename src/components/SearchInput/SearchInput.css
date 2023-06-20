@@ -1,0 +1,8 @@
+.search-pokemon-bar {
+	border-radius: 10px;
+	border: none;
+	padding: 0.75vh;
+	width: 65vw;
+	font-family: Roboto;
+	font-size: 3.75vw;
+}

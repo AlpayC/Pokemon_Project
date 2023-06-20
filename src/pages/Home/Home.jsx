@@ -5,15 +5,15 @@ import { useContext } from "react";
 import { DarkModeContext } from "../../context/Context";
 
 const Home = () => {
-  const { darkMode, setDarkMode } = useContext(DarkModeContext);
-  return (
-    <>
-      <section className={darkMode ? "dark" : "light"}>
-        <Header />
-        <PokemonList />
-      </section>
-    </>
-  );
+	const { darkMode, setDarkMode } = useContext(DarkModeContext);
+	return (
+		<>
+			<section className={darkMode ? "wrapper dark" : "wrapper light-mode"}>
+				<Header />
+				<PokemonList />
+			</section>
+		</>
+	);
 };
 
 export default Home;
