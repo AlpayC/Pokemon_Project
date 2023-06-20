@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import { LoaderContext, MenuClickedContext } from "./context/Context";
 import LoadingPage from "./components/LoadingPage/LoadingPage";
 import { useState } from "react";
+import SearchInput from "./components/SearchInput/SearchInput";
 
 function App() {
   const [menuClicked, setMenuClicked] = useState(false);
@@ -14,7 +15,8 @@ function App() {
       <MenuClickedContext.Provider value={{ menuClicked, setMenuClicked }}>
         <LoaderContext.Provider value={{ isLoading, setIsLoading }}>
           {isLoading ? <LoadingPage /> : <Home />}
-          {/* <Header /> noch hinzufügen */}
+          {/* <Header /><DarkMode />
+      <SearchInput /> noch hinzufügen */}
         </LoaderContext.Provider>
       </MenuClickedContext.Provider>
     </>
