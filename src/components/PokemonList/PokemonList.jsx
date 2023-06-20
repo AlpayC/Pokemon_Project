@@ -18,6 +18,8 @@ const PokemonList = () => {
     .catch((err) => console.log(`Fehler: ${err}`))
   },[])
 
+
+
   return (
     <section className="pokemon-list-sec">
       <PokemonTypes />
