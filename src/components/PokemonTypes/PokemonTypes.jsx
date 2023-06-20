@@ -1,5 +1,7 @@
+import ExitBtn from "../ExitBtn/ExitBtn";
 import SearchButton from "../SearchBtn/SearchBtn";
 import "./PokemonTypes.css";
+import { useState, useEffect } from "react";
 
 const PokemonTypes = () => {
   const [types, setTypes] = useState([]); // Zustand für die Pokémon-Typen. Hier werden die Typen als Array gespeichert
@@ -65,27 +67,28 @@ const PokemonTypes = () => {
   }, [searchClicked, selectedType]); // Die useEffect-Abhängigkeitsliste enthält searchClicked und selectedType
   return (
     <>
-      <h1>blabl aa</h1>
-      <h1>Type</h1>
-      <section className="types-container">
-        {/* Rendert die Buttons für die Pokémon-Typen */}
-        {types.map((type, index) => (
-          <button key={index} onClick={() => inputTypeSelection(type.name)}>
-            {type.name}
-          </button>
+      <section className="types-menu">
+        <h1>Type</h1> <ExitBtn />
+        <section className="types-container">
+          {/* Rendert die Buttons für die Pokémon-Typen */}
+          {types.map((type, index) => (
+            <button key={index} onClick={() => inputTypeSelection(type.name)}>
+              {type.name}
+            </button>
+          ))}
+        </section>
+        <button onClick={clickedSearchBtn}>Search</button>{" "}
+        {/* Füge den Klick-Handler für den "Search"-Button hinzu */}
+        <p>Output</p>
+        {/* Rendert die Pokémon-Daten */}
+        {pokemonData.map((pokemon, index) => (
+          <div className="type-pokemon-items" key={index}>
+            <img src={pokemon.spriteUrl} alt={pokemon.name} />
+            <h2>{pokemon.name}</h2>
+            <h2>{pokemon.id}</h2>
+          </div>
         ))}
       </section>
-      <button onClick={clickedSearchBtn}>Search</button>{" "}
-      {/* Füge den Klick-Handler für den "Search"-Button hinzu */}
-      <p>Output</p>
-      {/* Rendert die Pokémon-Daten */}
-      {pokemonData.map((pokemon, index) => (
-        <div className="type-pokemon-items" key={index}>
-          <img src={pokemon.spriteUrl} alt={pokemon.name} />
-          <h2>{pokemon.name}</h2>
-          <h2>{pokemon.id}</h2>
-        </div>
-      ))}
     </>
   );
 };

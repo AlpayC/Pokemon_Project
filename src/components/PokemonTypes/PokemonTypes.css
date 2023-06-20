@@ -10,3 +10,12 @@
 .type-pokemon-items img {
   width: 50%;
 }
+.types-menu {
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+}

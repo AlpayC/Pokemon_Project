@@ -1,9 +1,15 @@
 import "./ExitBtn.css";
+import { MenuClickedContext } from "../../context/Context";
+import { useContext } from "react";
 
 const ExitBtn = () => {
+  const { menuClicked, setMenuClicked } = useContext(MenuClickedContext);
+  const openMenu = () => {
+    setMenuClicked((prev) => !prev);
+  };
   return (
     <>
-      <h1>ExitBtn</h1>
+      <button onClick={openMenu}>X</button>
     </>
   );
 };
