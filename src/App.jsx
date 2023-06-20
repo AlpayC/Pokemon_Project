@@ -1,14 +1,11 @@
-import { useState } from "react";
-
 import "./App.css";
+import Home from "./pages/Home/Home";
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <>
-      <h1>blabl aa</h1>
-      <p>test</p>
+      <Home/>
     </>
   );
 }
