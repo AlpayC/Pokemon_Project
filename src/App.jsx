@@ -1,5 +1,6 @@
 import "./App.css";
 import Home from "./pages/Home/Home";
+import DetailPage from "./pages/DetailPage/DetailPage";
 import {
   LoaderContext,
   MenuClickedContext,
@@ -28,6 +29,7 @@ function App() {
                 <BrowserRouter>
                   <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/details/:name" element={<DetailPage />} />
                   </Routes>
                 </BrowserRouter>
               )}

@@ -1,22 +1,25 @@
 @font-face {
-	font-family: Roboto;
-	src: url(../src/assets/fonts/Roboto-Regular.ttf);
+  font-family: Roboto;
+  src: url(../src/assets/fonts/Roboto-Regular.ttf);
 }
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 .types-container {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 1rem;
-	padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem;
 }
 .type-pokemon-items {
-	width: 50%;
+  width: 50%;
 }
 .type-pokemon-items img {
-	width: 50%;
+  width: 50%;
+}
+a {
+  text-decoration: none;
 }

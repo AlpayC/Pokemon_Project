@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
 import "./BackBtn.css";
 
 const BackBtn = () => {
   return (
     <>
-      <h1>Backbtn</h1>
+      <Link to="/">
+        <button>Back</button>
+      </Link>
     </>
   );
 };

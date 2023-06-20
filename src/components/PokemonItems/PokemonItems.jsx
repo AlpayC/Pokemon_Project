@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./PokemonItems.css";
 import { useContext } from "react";
 import { PokemonDataContext } from "../../context/Context";
+import { Link } from "react-router-dom";
 
 const PokemonItems = (props) => {
   const { pokemonData, setPokemonData } = useContext(PokemonDataContext);
@@ -31,19 +32,22 @@ const PokemonItems = (props) => {
   return (
     <>
       {pokemonDetailData ? (
-        <article className="pokemon-item-art">
-          <img
-            className="poke-img"
-            src={
-              pokemonDetailData.sprites.other["official-artwork"].front_default
-            }
-            alt={name}
-          />
-          <div>
-            <p>#{number}</p>
-            <p>{name}</p>
-          </div>
-        </article>
+        <Link to={`/details/${name}`} pokemon={name}>
+          <article className="pokemon-item-art">
+            <img
+              className="poke-img"
+              src={
+                pokemonDetailData.sprites.other["official-artwork"]
+                  .front_default
+              }
+              alt={name}
+            />
+            <div>
+              <p>#{number}</p>
+              <p>{name}</p>
+            </div>
+          </article>
+        </Link>
       ) : (
         <p>loading data..</p>
       )}
