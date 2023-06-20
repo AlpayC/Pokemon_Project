@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import "./PokemonItems.css";
+import { useContext } from "react";
+import { PokemonDataContext } from "../../context/Context";
 
 const PokemonItems = (props) => {
+  const { pokemonData, setPokemonData } = useContext(PokemonDataContext)
   const [pokemonDetailData, setPokemonDetailData] = useState()
   const url = props.pokemon.url
 
@@ -10,7 +13,9 @@ const PokemonItems = (props) => {
     .then((res) => res.json())
     .then((data) => setPokemonDetailData(data))
     .catch((err) => console.log(`Fehler: ${err}`))
-  },[])
+  },[pokemonData])
+
+  // console.log(pokemonDetailData);
 
     // Umformung der Werte für die Darstellung
     // prüfen ob pokemonDetailData schon verfügbar ist !!! sonst Error undefined reading id

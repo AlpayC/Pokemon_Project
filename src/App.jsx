@@ -1,6 +1,5 @@
 import "./App.css";
 import Home from "./pages/Home/Home";
-import Header from "./components/Header/Header";
 import {
   LoaderContext,
   MenuClickedContext,
@@ -9,7 +8,6 @@ import {
 } from "./context/Context";
 import LoadingPage from "./components/LoadingPage/LoadingPage";
 import { useState } from "react";
-import SearchInput from "./components/SearchInput/SearchInput";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
