@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .types-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -10,3 +11,5 @@
 .type-pokemon-items img {
   width: 50%;
 }
+=======
+>>>>>>> 52dfbc4f3de18c9931ff6062ae536b6b0b34d10b

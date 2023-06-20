@@ -1,10 +1,10 @@
+import PokemonList from "../../components/PokemonList/PokemonList";
 import "./Home.css";
 
 const Home = () => {
   return (
     <>
-      <h1>Home</h1>
-      <p>test</p>
+      <PokemonList/>
     </>
   );
 };
