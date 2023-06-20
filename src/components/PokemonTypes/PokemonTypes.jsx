@@ -63,9 +63,8 @@ const PokemonTypes = () => {
         });
     }
   }, [searchClicked, selectedType]); // Die useEffect-Abhängigkeitsliste enthält searchClicked und selectedType
-  return <>
-  
-  <>
+  return (
+    <>
       <h1>blabl aa</h1>
       <h1>Type</h1>
       <section className="types-container">
@@ -86,7 +85,9 @@ const PokemonTypes = () => {
           <h2>{pokemon.name}</h2>
           <h2>{pokemon.id}</h2>
         </div>
-      ))}</>;
+      ))}
+    </>
+  );
 };
 
 export default PokemonTypes;

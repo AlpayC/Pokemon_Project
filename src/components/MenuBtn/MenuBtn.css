@@ -1,0 +1,16 @@
+.menu-btn {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	width: 24px;
+	height: 20px;
+}
+
+.menu-btn-line {
+	width: 100%;
+	height: 4px;
+	background: black;
+	margin: 3px auto;
+}
