@@ -5,6 +5,7 @@ import {
   MenuClickedContext,
   PokemonDataContext,
   DarkModeContext,
+  ALLPokemonDataContext,
 } from "./context/Context";
 import LoadingPage from "./components/LoadingPage/LoadingPage";
 import { useState } from "react";
@@ -15,9 +16,11 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
   const [pokemonData, setPokemonData] = useState([]);
+  const [ALLPokemonData, setALLPokemonData] = useState([])
 
   return (
     <>
+    <ALLPokemonDataContext.Provider value={{ALLPokemonData, setALLPokemonData}}>
       <PokemonDataContext.Provider value={{ pokemonData, setPokemonData }}>
         <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
           <MenuClickedContext.Provider value={{ menuClicked, setMenuClicked }}>
@@ -31,12 +34,11 @@ function App() {
                   </Routes>
                 </BrowserRouter>
               )}
-              {/* <DarkMode />
-      <SearchInput /> noch hinzufügen */}
             </LoaderContext.Provider>
           </MenuClickedContext.Provider>
         </DarkModeContext.Provider>
       </PokemonDataContext.Provider>
+      </ALLPokemonDataContext.Provider>
     </>
   );
 }

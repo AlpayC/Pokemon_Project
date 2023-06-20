@@ -1,14 +1,13 @@
-import SearchButton from "../SearchBtn/SearchBtn";
 import "./PokemonTypes.css";
-import { useContext } from "react";
-import { PokemonDataContext } from "../../context/Context";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { MenuClickedContext, ALLPokemonDataContext, PokemonDataContext } from "../../context/Context";
 
 const PokemonTypes = () => {
   const [types, setTypes] = useState([]); // Zustand für die Pokémon-Typen. Hier werden die Typen als Array gespeichert
   const [selectedType, setSelectedType] = useState(""); // Zustand für den ausgewählten Pokémon-Typ ab Btn Click
   const { pokemonData, setPokemonData } = useContext(PokemonDataContext);
+  const { menuClicked, setMenuClicked } = useContext(MenuClickedContext);
+  const {ALLPokemonData, setALLPokemonData} = useContext(ALLPokemonDataContext)
 
   useEffect(() => {
     // Fetch, um die Pokémon-Typen zu laden (wird nur einmal beim Start der App ausgeführt) und die Typen Btns bleiben gespeichert
@@ -29,6 +28,7 @@ const PokemonTypes = () => {
 
   const searchPokemons = () => {
     // Funktion, die ausgeführt wird, wenn der "Search"-Button geklickt wird
+    setMenuClicked(false)
     if (selectedType !== "") {
       // Überprüfe, ob der Suchvorgang gestartet wurde und ein Pokémon-Typ ausgewählt wurde
       fetch(`https://pokeapi.co/api/v2/type/${selectedType}`)
@@ -43,6 +43,11 @@ const PokemonTypes = () => {
     }
   };
 
+  const reset = () => {
+    setMenuClicked(false)
+    setPokemonData(ALLPokemonData)
+  }
+
   return (
     <>
       <section className="types-container">
@@ -53,7 +58,8 @@ const PokemonTypes = () => {
           </button>
         ))}
       </section>
-      <button onClick={searchPokemons}>Search</button>{" "}
+      <button onClick={searchPokemons}>Search</button>
+      <button onClick={reset}>Reset</button>
     </>
   );
 };
