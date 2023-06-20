@@ -6,17 +6,17 @@ import "./Header.css";
 import DarkMode from "../DarkMode/DarkMode";
 
 const Header = () => {
-  return (
-    /* Allgemeiner Header... alles reinpacken was gebraucht wird */
-    <header>
-      <LogoIMG />
-      <div className="test-nav-div">
-        <MenuBtn />
-        <SearchInput />
-        <DarkMode />
-      </div>
-    </header>
-  );
+	return (
+		/* Allgemeiner Header... alles reinpacken was gebraucht wird */
+		<header>
+			<LogoIMG />
+			<div className='nav-div'>
+				<MenuBtn />
+				<SearchInput />
+				<DarkMode />
+			</div>
+		</header>
+	);
 };
 
 export default Header;

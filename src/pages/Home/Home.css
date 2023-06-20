@@ -1,0 +1,15 @@
+/* DARKMODE */
+.dark {
+	background-color: rgb(69, 69, 69);
+}
+
+.light-mode {
+	background-color: #ccdadd;
+}
+
+/* WRAPPER */
+.wrapper {
+	padding: 2vh 5vw;
+	transition: 0.4s ease-in-out;
+	font-family: Roboto;
+}

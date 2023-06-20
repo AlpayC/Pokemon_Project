@@ -1,9 +1,7 @@
-.dark {
-    background-color: rgb(69, 69, 69);
-    color: white;
+.dark-light-img {
+	width: 10vw;
+	height: auto;
 }
-
-.light {
-    background-color: white;
-    color:black;
+.brighter {
+	filter: brightness(4);
 }

@@ -1,0 +1,34 @@
+.pokemon-item-art {
+	background: linear-gradient(
+		180deg,
+		rgba(255, 222, 171, 1) 12%,
+		rgba(255, 204, 12, 1) 95%
+	);
+	border-radius: 10px 10px 0 0;
+	width: 42vw;
+	height: 15vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transition: 0.5s ease-in-out;
+}
+
+.pokemon-item-art div {
+	background-color: white;
+	width: 42vw;
+	border-radius: 0 0 10px 10px;
+	display: flex;
+	justify-content: space-between;
+	font-size: 4.5vw;
+	padding: 0.95vh;
+}
+
+.pokemon-item-art:hover {
+	transform: scale(1.05);
+}
+
+.poke-img {
+	width: 100%;
+	height: auto;
+}

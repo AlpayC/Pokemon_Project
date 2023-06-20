@@ -9,10 +9,8 @@ const Home = () => {
   const { darkMode, setDarkMode } = useContext(DarkModeContext);
   return (
     <>
-      <section className={darkMode ? "dark" : "light"}>
-
+      <section className={darkMode ? "wrapper dark" : "wrapper light-mode"}>
         <Header />
-        {/* <PokemonTypes/> */}
         <PokemonList />
       </section>
     </>

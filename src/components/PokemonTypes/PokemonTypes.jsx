@@ -8,7 +8,7 @@ import { useEffect } from "react";
 const PokemonTypes = () => {
   const [types, setTypes] = useState([]); // Zustand für die Pokémon-Typen. Hier werden die Typen als Array gespeichert
   const [selectedType, setSelectedType] = useState(""); // Zustand für den ausgewählten Pokémon-Typ ab Btn Click
-  const { pokemonData, setPokemonData } = useContext(PokemonDataContext)
+  const { pokemonData, setPokemonData } = useContext(PokemonDataContext);
 
   useEffect(() => {
     // Fetch, um die Pokémon-Typen zu laden (wird nur einmal beim Start der App ausgeführt) und die Typen Btns bleiben gespeichert
@@ -34,9 +34,9 @@ const PokemonTypes = () => {
       fetch(`https://pokeapi.co/api/v2/type/${selectedType}`)
         .then((response) => response.json())
         .then((data) => {
-          let updatedPokemonData = data.pokemon.map((elm) => elm.pokemon)
-          setPokemonData(updatedPokemonData)
-          })
+          let updatedPokemonData = data.pokemon.map((elm) => elm.pokemon);
+          setPokemonData(updatedPokemonData);
+        })
         .catch((error) => {
           console.log("Fehler beim Laden", error);
         });
@@ -45,8 +45,6 @@ const PokemonTypes = () => {
 
   return (
     <>
-      <h1>blabl aa</h1>
-      <h1>Type</h1>
       <section className="types-container">
         {/* Rendert die Buttons für die Pokémon-Typen */}
         {types.map((type, index) => (
