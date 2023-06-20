@@ -1,14 +1,16 @@
 import { useState } from "react";
+import SearchInput from "./components/SearchInput/SearchInput";
 
 import "./App.css";
+import DarkMode from "./components/DarkMode/DarkMode";
+
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <>
-      <h1>blabl aa</h1>
-      <p>test</p>
+      <DarkMode />
+      <SearchInput />
     </>
   );
 }
