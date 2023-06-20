@@ -1,16 +1,23 @@
 import { useState } from "react";
 
 import "./App.css";
+import Header from "./components/Header/Header";
+import { LoaderContext, MenuClickedContext } from "./context/Context";
+import LoadingPage from "./components/LoadingPage/LoadingPage";
 
 function App() {
-  const [count, setCount] = useState(0);
+	const [menuClicked, setMenuClicked] = useState(false);
+	const [isLoading, setIsLoading] = useState(true);
 
-  return (
-    <>
-      <h1>blabl aa</h1>
-      <p>test</p>
-    </>
-  );
+	return (
+		<>
+			<MenuClickedContext.Provider value={{ menuClicked, setMenuClicked }}>
+				<LoaderContext.Provider value={{ isLoading, setIsLoading }}>
+					{isLoading ? <LoadingPage /> : <Header />}
+				</LoaderContext.Provider>
+			</MenuClickedContext.Provider>
+		</>
+	);
 }
 
 export default App;
